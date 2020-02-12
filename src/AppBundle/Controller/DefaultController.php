@@ -5,6 +5,7 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use AppBundle\Entity\Motorcycle;
 
 class DefaultController extends Controller
 {
@@ -13,9 +14,14 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
+        $motos=[];
+        $em = $this->getDoctrine()->getManager();
+        $motos= $em->getRepository(Motorcycle::class)->findAllActive();
+        
+        
         // replace this example code with whatever you need
         return $this->render('default/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+            'motos'=>$motos,
         ]);
     }
 }

@@ -12,7 +12,6 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Motorcycle
 {    
-    
     /**
     * @ORM\ManyToOne(targetEntity="Buyer", inversedBy="Motorcycle")
     * @ORM\JoinColumn(name="Buyer_id", referencedColumnName="id")

@@ -3,21 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group name="Symfony">
-            <file>file:/C:/workspaceSymfony/sym_motoracing/app/Resources/views/base.html.twig</file>
-            <file>file:/C:/workspaceSymfony/sym_motoracing/web/assets/scss/_utilities.scss</file>
-            <file>file:/C:/workspaceSymfony/sym_motoracing/web/assets/scss/app.scss</file>
-            <file>file:/C:/workspaceSymfony/sym_motoracing/web/assets/scss/_components.scss</file>
-            <file>file:/C:/workspaceSymfony/sym_motoracing/web/assets/scss/_objects.scss</file>
-            <file>file:/C:/workspaceSymfony/sym_motoracing/web/assets/scss/_generic.scss</file>
-            <file>file:/C:/workspaceSymfony/sym_motoracing/webpack.config.js</file>
-            <file>file:/C:/workspaceSymfony/sym_motoracing/web/assets/scss/_specifics.scss</file>
-            <file>file:/C:/workspaceSymfony/sym_motoracing/web/assets/scss/_elements.scss</file>
-            <file>file:/C:/workspaceSymfony/sym_motoracing/web/assets/scss/_tools.scss</file>
-            <file>file:/C:/workspaceSymfony/sym_motoracing/web/assets/scss/_themes.scss</file>
-            <file>file:/C:/workspaceSymfony/sym_motoracing/web/build/manifest.json</file>
-            <file>file:/C:/workspaceSymfony/sym_motoracing/web/assets/scss/_settings.scss</file>
-            <file>file:/C:/workspaceSymfony/sym_motoracing/web/assets/scss/globas.scss</file>
-            <file>file:/C:/workspaceSymfony/sym_motoracing/web/assets/js/main.js</file>
+            <file>file:/C:/workspaceSymfony/sym_motoracing/src/AppBundle/Repository/MotorcycleRepository.php</file>
+            <file>file:/C:/workspaceSymfony/sym_motoracing/src/AppBundle/Entity/Motorcycle.php</file>
         </group>
     </open-files>
 </project-private>
