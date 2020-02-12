@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Motorcycles list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Color</th>
+                <th>Cc</th>
+                <th>Description</th>
+                <th>Photo</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for motorcycle in motorcycles %}
+            <tr>
+                <td><a href="{{ path('motorcycle_show', { 'id': motorcycle.id }) }}">{{ motorcycle.id }}</a></td>
+                <td>{{ motorcycle.name }}</td>
+                <td>{{ motorcycle.color }}</td>
+                <td>{{ motorcycle.cc }}</td>
+                <td>{{ motorcycle.description }}</td>
+                <td>{{ motorcycle.photo }}</td>
+                <td>{{ motorcycle.price }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('motorcycle_show', { 'id': motorcycle.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('motorcycle_edit', { 'id': motorcycle.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('motorcycle_new') }}">Create a new motorcycle</a>
+        </li>
+    </ul>
+{% endblock %}

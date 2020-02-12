@@ -12,25 +12,11 @@ use Doctrine\Common\Collections\ArrayCollection;
  * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
  */
 class User
-{
-    /**
-    * @ORM\OneToMany(targetEntity="User", mappedBy="Seller")
-    */
-    private $Seller;
+{    
+  public function __construct() {
+    $this->isActive = 1;
+  }
     
-    /**
-    * @ORM\OneToMany(targetEntity="User", mappedBy="Buyer")
-    */
-    private $Buyer;
-    
-    public function __construct()
-    {
-    $this->Seller = new ArrayCollection();
-    $this->Buyer = new ArrayCollection();
-    }
-    
-
-
     /**
      * @var int
      *
@@ -267,5 +253,30 @@ class User
     {
         return $this->role;
     }
+    
+      /**
+   * @see Methods used by the login form
+   */
+  public function serialize() {
+    return serialize([
+      $this->id,
+      $this->username,
+      $this->password,
+      $this->name,
+      $this->surname,
+      $this->email,
+      $this->role
+    ]);
+  }
+
+  public function unserialize($serialized) {
+    list (
+      $this->id,
+      $this->username,      
+      $this->password,
+      $this->email,
+      $this->role
+       ) = unserialize($serialized, ['allowed_classes' => FALSE]);
+  }
 }
 

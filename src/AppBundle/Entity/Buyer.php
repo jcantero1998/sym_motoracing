@@ -11,7 +11,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  * @ORM\Table(name="buyer")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\BuyerRepository")
  */
-class Buyer
+class Buyer extends User
 {
     /**
     * @ORM\OneToMany(targetEntity="Buyer", mappedBy="Motorcycle")
@@ -19,13 +19,9 @@ class Buyer
     private $MotorCycle;
     public function __construct()
     {
-    $this->MotorCycle = new ArrayCollection();
+        parent::__construct();
+        $this->MotorCycle = new ArrayCollection();
     }
-    /**
-    * @ORM\ManyToOne(targetEntity="User", inversedBy="Buyer")
-    * @ORM\JoinColumn(name="User_id", referencedColumnName="id")
-    */
-    private $User;
     
     /**
      * @var int

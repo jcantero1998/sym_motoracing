@@ -9,14 +9,14 @@
         {% endblock %}
     </head>
     <body>
-        {% block navbar %}
+    {#    {% block navbar %}
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                 {% include 'navbar/private.html.twig' %}
             {% else %}
                 {% include 'navbar/public.html.twig' %}
             {% endif %}
         {% endblock %}
-        {% block body %} {% endblock %}
+    #}    {% block body %} {% endblock %}
         {% block javascripts %}
             <script src="{{asset('build/app.js')}}"></script>
         {% endblock %}

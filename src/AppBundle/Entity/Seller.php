@@ -11,7 +11,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  * @ORM\Table(name="seller")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\SellerRepository")
  */
-class Seller
+class Seller extends User
 {
     
     /**
@@ -20,14 +20,9 @@ class Seller
     private $MotorCycle;
     public function __construct()
     {
-    $this->MotorCycle = new ArrayCollection();
+        parent::__construct();
+        $this->MotorCycle = new ArrayCollection();
     }
-    
-    /**
-    * @ORM\ManyToOne(targetEntity="User", inversedBy="Seller")
-    * @ORM\JoinColumn(name="User_id", referencedColumnName="id")
-    */
-    private $User;
     
     /**
      * @var int
