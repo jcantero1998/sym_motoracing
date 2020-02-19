@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white " >
+    <a class="navbar-brand d-flex flex-column" href="{{ path('homepage') }}">
+        <img src="{{ asset('assets/img/dev_logo.png') }}" class="img-fluid rounded" alt="logoCuatrovientos">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " href="{{ path('motorcycle_new') }}" ><span class="fa fa-file p-2"></span>Añadir una moto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="{{ path('motorcycle_index') }}" ><span class="fa fa-address-book p-2"></span>Mis motos</a>
+                    </li>
+            </ul>
+    </div>
+</nav>
+<hr/>

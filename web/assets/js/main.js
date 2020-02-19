@@ -6,9 +6,6 @@ require('../css/bootstrap-reboot.min.css');
 // JS
 require('./bootstrap.min.js');
 require('./bootstrap.bundle.min.js');
-// Icons
-require('./webpack-icons-installer');
-console.info('Your script is loaded.');
 
 //const imagesContext = require.context('../SCEditor_wysiwyg/emoticons', true, /\.(png|jpg|jpeg|gif|ico|svg|webp)$/);
 //imagesContext.keys().forEach(imagesContext);
