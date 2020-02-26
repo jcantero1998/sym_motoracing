@@ -12,14 +12,53 @@ use Doctrine\Common\Persistence\ObjectManager;
 class InitialFixture implements ORMFixtureInterface{
     public function load(ObjectManager $manager)
     {
-        // Creating 20 job offers
-        for ($i = 0; $i < 20; $i++)
+        for ($i = 0; $i < 23; $i++)
         {
             $jobFaker = Faker\Factory::create();
             
+                        
+            // User
+            //$user = new User();
+            //$user->setEmail("mail_$i@cuatrovientos.org");
+            //$user->setIsActive(false);
+            //$user->setName("User $i");
+            //$user->setPassword("1234");
+            //$user->setRole("user");
+            //$user->setSurname("User $i");
+            //$user->setUsername("User $i");
+            //$manager->persist($user);
+            
             // Buyer
             $buyer = new Buyer();
+            $buyer->setUsername($jobFaker->name);
+            $buyer->setPassword("1234");
+            $buyer->setName("buyer $i");
+            $buyer->setSurname($jobFaker->lastName);
+            $buyer->setEmail("buyer$i@mail.com");
+            $buyer->setIsActive(false);
+            $buyer->setRole("user");
+            
             $manager->persist($buyer);
+            
+            // Seller
+            $seller = new Seller();
+            $seller->setUsername($jobFaker->name);
+            $seller->setPassword("1234");
+            $seller->setName("seller $i");
+            $seller->setSurname($jobFaker->lastName);
+            $seller->setEmail("seller$i@mail.com");
+            $seller->setIsActive(false);
+            $seller->setRole("user");
+
+            $manager->persist($seller);
+          
+        }
+        for ($i = 0; $i < 23; $i++)
+        {
+            // TypeMotorcycle
+            $typemotorcycle = new TypeMotorcycle();
+            $typemotorcycle->setType("Type $i");
+            $manager->persist($typemotorcycle);
             
             // Motorcycle
             $motorcycle = new Motorcycle();
@@ -29,28 +68,10 @@ class InitialFixture implements ORMFixtureInterface{
             $motorcycle->setName("Moto $i");
             $motorcycle->setPhoto("");
             $motorcycle->setPrice("1000$i");
+            $motorcycle->setTypeMotorcycle($typemotorcycle);
             $manager->persist($motorcycle);
-            
-            // Seller
-            $seller = new Seller();
-            $manager->persist($seller);
-            
-            // TypeMotorcycle
-            $typemotorcycle = new TypeMotorcycle();
-            $typemotorcycle->setType("Type $i");
-            $manager->persist($typemotorcycle);
-            
-            // User
-            $user = new User();
-            $user->setEmail("artean_$i@cuatrovientos.org");
-            $user->setIsActive(false);
-            $user->setName("User $i");
-            $user->setPassword("4Vientos");
-            $user->setRole("role");
-            $user->setSurname("User $i");
-            $user->setUsername("User $i");
-            $manager->persist($user);
         }
+
         $manager->flush();
     }
 }

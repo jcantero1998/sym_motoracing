@@ -235,5 +235,32 @@ class Motorcycle
     {
         return $this->price;
     }
+    
+    
+    function getBuyer() {
+        return $this->Buyer;
+    }
+
+    function setBuyer($Buyer) {
+        $this->Buyer = $Buyer;
+    }
+
+    function getTypeMotorcycle() {
+        return $this->TypeMotorcycle;
+    }
+
+    function setTypeMotorcycle($TypeMotorcycle) {
+        $this->TypeMotorcycle = $TypeMotorcycle;
+    }
+
+    function getSeller() {
+        return $this->Seller;
+    }
+
+    function setSeller($Seller) {
+        $this->Seller = $Seller;
+    }
+
+
 }
 

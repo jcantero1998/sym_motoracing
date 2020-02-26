@@ -25,7 +25,7 @@ class MotorcycleController extends Controller
         $em = $this->getDoctrine()->getManager();
         
         // Get all the offers published by the logged employer
-        $loggedin_username = $request->getSession()->get(Security::LAST_USERNAME);
+        //$loggedin_username = $request->getSession()->get(Security::LAST_USERNAME);
 
         $motorcycles = $em->getRepository('AppBundle:Motorcycle')->findAll();
 

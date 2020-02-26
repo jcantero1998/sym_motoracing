@@ -35,7 +35,7 @@
                                 <h4 class="p-0"> {{ moto.getName() }}
                                     <small ><i > {{ moto.getPrice() }}</i></small>
                                 </h4>
-                                {#<a href="{{ path('motos_show', {'id': moto.getId()}) }}" class="btn btn-outline-primary">More details...</a>#} 
+                                <a href="{{ path('motorcycle_show', { 'id': moto.getId() }) }}"class="btn btn-outline-primary">More details...</a>
                             </div>
                             <div class="px-2">
                                 <p class="card-body text-muted mb-0"> {{ moto.getDescription() }} </p>

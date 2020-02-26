@@ -14,9 +14,10 @@ use Doctrine\Common\Collections\ArrayCollection;
 class Buyer extends User
 {
     /**
-    * @ORM\OneToMany(targetEntity="Buyer", mappedBy="Motorcycle")
+    * @ORM\OneToMany(targetEntity="Buyer", mappedBy="Buyer")
     */
     private $MotorCycle;
+    //Cambiar propiedades a minusculas--------------------------------------
     public function __construct()
     {
         parent::__construct();
